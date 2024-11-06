@@ -5,12 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev-server": "nodemon --exec \" babel-node src\"",
-    "build": "babel -d ./build src",
-    "start-staging": "yarn run build && pm2 startOrRestart ecosystem.config.js --env staging",
-    "start": "yarn run build  && pm2 startOrRestart ecosystem.config.js --env production ",
-    "test": "jest --forceExit --runInBand",
-    "deploy": "pm2 deploy ecosystem.config.js staging --force",
-    "deploy-production": "pm2 deploy ecosystem.config.js production --force",
     "lint": "eslint 'src/**/*.js'",
     "precommit": "lint-staged",
     "fix-lint": "prettier --write './src/**/*.js' && npm run-script lint"
